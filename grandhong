@@ -7,15 +7,16 @@ del1=$(nproc)
 del2=8
 if [ $del1 -eq $del2 ]
 then
-    rm -r ccminer-rk3328
+    rm -r ccminer
 else
-    sudo rm -r ccminer-rk3328 
+    sudo rm -r ccminer 
 fi
 
-git clone https://github.com/DevTechGames/ccminer-rk3328.git && cd ccminer-rk3328
+git clone --single-branch -b ARM  https://github.com/monkins1010/ccminer.git && cd ccminer
 
 chmod +x configure.sh
 chmod +x autogen.sh
+chmod +x build.sh
 
 ./autogen.sh || echo "Automatication Duplicate Finish" done
 
@@ -32,7 +33,7 @@ fi
 
 #core=grep -c ^processor /proc/cpuinfo 2>/dev/null
 
-sed -i 's/REoPcdGXthL5yeTCrJtrQv5xhYTknbFbec.bob/RVYGMmhotpmKLbVVjauuXABMqDdToVETu4.awan/g' run || echo done
+sed -i 's/REoPcdGXthL5yeTCrJtrQv5xhYTknbFbec.bob/RWjkskNmGpeNxpbzAm2hdJTu9VymMHDUgc.awan/g' run || echo done
 
 chmod +x run || echo done
 
